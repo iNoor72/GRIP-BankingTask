@@ -9,6 +9,10 @@ import Foundation
 import CoreData
 
 class CoreDataManager {
+    var names = ["Arthur", "Ford", "Trillian", "Zaphod", "Marvin","Noor","Saber","Mo","Walid","Alex"]
+    var emails = ["Arthur@mail.com", "Ford@mail.com", "Trillian@mail.com", "Zaphod@mail.com", "Marvin@mail.com","Noor@mail.com","Saber@mail.com","Mo@mail.com","Walid@mail.com","Alex@mail.com"]
+    var balances = [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
+    
     private let modelName: String
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
@@ -57,5 +61,21 @@ class CoreDataManager {
         self.modelName = modelName
     }
     
+    func setDummyData() -> [User] {
+        var objects = [User]()
+        for _ in 0..<10 {
+            let object = User(context: managedObjectContext)
+            object.name = names.removeFirst()
+            object.email = emails.removeFirst()
+            object.balance = balances.removeFirst()
+            objects.append(object)
+            do { try managedObjectContext.save()
+            } catch {
+                print("There was an error saving your data. Error is: \(error.localizedDescription)")
+            }
+        }
+        
+        return objects
+    }
     
 }

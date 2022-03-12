@@ -8,5 +8,17 @@
 import Foundation
 
 struct Constants {
-    static let coreDataModelName = "Model"
+    static let CoreDataModelName = "Model"
+    
+    struct ViewControllers {
+        
+    }
+    
+    struct Cells {
+        static let UserInfoCell = "UserInfoCell"
+    }
+    
+    struct NibNames {
+        static let UserCellNibName = "UserInfoTableViewCell"
+    }
 }
