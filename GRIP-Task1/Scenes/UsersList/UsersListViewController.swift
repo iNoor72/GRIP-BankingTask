@@ -42,8 +42,7 @@ extension UsersListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.UserInfoCell) as? UserInfoTableViewCell else { return UITableViewCell() }
-        cell.usernameLabel.text = usersPresenter.users[indexPath.row].name
-        cell.emailLabel.text = usersPresenter.users[indexPath.row].email
+        cell.configureCell(user: usersPresenter.users[indexPath.row])
         return cell
     }
     
