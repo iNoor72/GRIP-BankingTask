@@ -11,7 +11,9 @@ struct Constants {
     static let CoreDataModelName = "Model"
     
     struct ViewControllers {
-        
+        static let UsersListViewController = "UsersListViewController"
+        static let UserDetailsViewController = "UserDetailsViewController"
+        static let TransferMoneyViewController = "TransferMoneyViewController"
     }
     
     struct Cells {

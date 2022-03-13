@@ -30,5 +30,7 @@ class UserDetailsViewController: UIViewController, UserDetailsViewProtocol {
     }
     
     @IBAction func transferButtonTapped(_ sender: UIButton) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllers.TransferMoneyViewController) as? TransferMoneyViewController else { return }
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

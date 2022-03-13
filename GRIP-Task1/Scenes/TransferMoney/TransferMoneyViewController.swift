@@ -22,6 +22,11 @@ class TransferMoneyViewController: UIViewController {
     }
     
     @IBAction func confirmButtonTapped(_ sender: UIButton) {
+        
+        
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllers.UsersListViewController) as? UsersListViewController else { return }
+        vc.modalPresentationStyle = .fullScreen
+        navigationController?.present(vc, animated: true, completion: nil)
     }
     
 }
