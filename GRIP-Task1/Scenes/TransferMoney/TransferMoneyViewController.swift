@@ -8,22 +8,20 @@
 import UIKit
 
 class TransferMoneyViewController: UIViewController {
-
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var confirmButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupUI() {
+        confirmButton.layer.cornerRadius = 10.0
     }
-    */
-
+    
+    @IBAction func confirmButtonTapped(_ sender: UIButton) {
+    }
+    
 }

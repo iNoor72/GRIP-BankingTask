@@ -9,6 +9,7 @@ import Foundation
 
 protocol UsersPresenterProtocol {
     var users: [User] { get }
+    func navigateToUser(at index: Int)
 }
 
 class UsersPresenter: UsersPresenterProtocol {
@@ -18,5 +19,9 @@ class UsersPresenter: UsersPresenterProtocol {
     init(view: UsersListViewProtocol, users: [User]) {
         self.usersView = view
         self.users = users
+    }
+    
+    func navigateToUser(at index: Int) {
+        let user = users[index]
     }
 }

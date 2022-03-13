@@ -37,7 +37,7 @@ class UsersListViewController: UIViewController, UsersListViewProtocol {
 //MARK:- UITableView
 extension UsersListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return usersPresenter.users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,7 +47,7 @@ extension UsersListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        usersPresenter.navigateToUser(at: indexPath.row)
     }
     
     

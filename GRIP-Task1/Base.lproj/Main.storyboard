@@ -11,7 +11,6 @@
         <!--Users List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="UsersListViewController" customModule="GRIP_Task1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -46,6 +45,7 @@
                         <outlet property="usersTableView" destination="hg0-2R-wtN" id="0rF-0R-AZr"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="120.53571428571428"/>
         </scene>
@@ -70,18 +70,58 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Balance:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cN-rt-vBK">
+                                <rect key="frame" x="16" y="335.5" width="382" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWg-QU-QnQ">
+                                <rect key="frame" x="32" y="731" width="350" height="31"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Transfer Money">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="transferButtonTapped:" destination="FcG-TJ-CK6" eventType="touchUpInside" id="wCL-wy-2AF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKx-ov-fQn">
+                                <rect key="frame" x="16" y="379" width="382" height="27.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Balance">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="Avenir-Heavy"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PMG-B6-nVp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="uKx-ov-fQn" firstAttribute="leading" secondItem="PMG-B6-nVp" secondAttribute="leading" constant="16" id="3a8-dP-v93"/>
+                            <constraint firstItem="PMG-B6-nVp" firstAttribute="trailing" secondItem="1cN-rt-vBK" secondAttribute="trailing" constant="16" id="4CC-cN-t2g"/>
+                            <constraint firstItem="1cN-rt-vBK" firstAttribute="top" secondItem="a1B-Mu-5Zk" secondAttribute="bottom" constant="32" id="4Un-H8-5my"/>
+                            <constraint firstItem="PMG-B6-nVp" firstAttribute="bottom" secondItem="AWg-QU-QnQ" secondAttribute="bottom" constant="100" id="6bw-wH-Vqp"/>
+                            <constraint firstItem="PMG-B6-nVp" firstAttribute="trailing" secondItem="AWg-QU-QnQ" secondAttribute="trailing" constant="32" id="Cij-pI-DM2"/>
+                            <constraint firstItem="1cN-rt-vBK" firstAttribute="leading" secondItem="PMG-B6-nVp" secondAttribute="leading" constant="16" id="Fw5-yf-6nt"/>
                             <constraint firstItem="a1B-Mu-5Zk" firstAttribute="leading" secondItem="PMG-B6-nVp" secondAttribute="leading" constant="16" id="Har-Sj-MUw"/>
+                            <constraint firstItem="uKx-ov-fQn" firstAttribute="top" secondItem="1cN-rt-vBK" secondAttribute="bottom" constant="16" id="T1D-Fm-CWO"/>
                             <constraint firstItem="a1B-Mu-5Zk" firstAttribute="top" secondItem="aAg-86-eUj" secondAttribute="bottom" constant="16" id="a6D-Ik-n97"/>
                             <constraint firstItem="aAg-86-eUj" firstAttribute="top" secondItem="PMG-B6-nVp" secondAttribute="top" constant="16" id="hJt-Qb-8xG"/>
+                            <constraint firstItem="PMG-B6-nVp" firstAttribute="trailing" secondItem="uKx-ov-fQn" secondAttribute="trailing" constant="16" id="k2Z-hC-w6T"/>
+                            <constraint firstItem="AWg-QU-QnQ" firstAttribute="leading" secondItem="PMG-B6-nVp" secondAttribute="leading" constant="32" id="lXA-d0-k9e"/>
                             <constraint firstItem="PMG-B6-nVp" firstAttribute="trailing" secondItem="a1B-Mu-5Zk" secondAttribute="trailing" constant="16" id="oug-gk-YCl"/>
                             <constraint firstItem="aAg-86-eUj" firstAttribute="centerX" secondItem="KPx-lQ-Bhh" secondAttribute="centerX" id="u77-A2-ndN"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="balanceLabel" destination="uKx-ov-fQn" id="YeR-w8-S8u"/>
+                        <outlet property="transferButton" destination="AWg-QU-QnQ" id="zwV-oh-QZU"/>
                         <outlet property="userImage" destination="aAg-86-eUj" id="trs-Bs-50w"/>
                         <outlet property="usernameLabel" destination="a1B-Mu-5Zk" id="MDf-Xg-4Oo"/>
                     </connections>
@@ -97,9 +137,73 @@
                     <view key="view" contentMode="scaleToFill" id="mLa-zt-KXh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're transfering money to:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DI1-KT-ucD">
+                                <rect key="frame" x="16" y="60" width="382" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gs-iL-H2b">
+                                <rect key="frame" x="16" y="119.5" width="382" height="27.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Username">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="Avenir-Heavy"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the amount you want to transfer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nUR-Ie-qDP">
+                                <rect key="frame" x="16" y="266.5" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfer amount" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqc-bO-17h">
+                                <rect key="frame" x="16" y="231" width="382" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivY-OW-Za2">
+                                <rect key="frame" x="32" y="400.5" width="350" height="31"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Confirm Transfer">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="confirmButtonTapped:" destination="yr1-Xe-x1K" eventType="touchUpInside" id="05b-y8-DaK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="TUn-zW-Fnh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Gs-iL-H2b" firstAttribute="leading" secondItem="TUn-zW-Fnh" secondAttribute="leading" constant="16" id="22Q-vm-8mv"/>
+                            <constraint firstItem="nUR-Ie-qDP" firstAttribute="top" secondItem="lqc-bO-17h" secondAttribute="bottom" constant="8" id="7Bg-pG-5GS"/>
+                            <constraint firstItem="DI1-KT-ucD" firstAttribute="leading" secondItem="TUn-zW-Fnh" secondAttribute="leading" constant="16" id="FvQ-kT-Wjf"/>
+                            <constraint firstItem="TUn-zW-Fnh" firstAttribute="trailing" secondItem="ivY-OW-Za2" secondAttribute="trailing" constant="32" id="M0p-QK-FBU"/>
+                            <constraint firstItem="lqc-bO-17h" firstAttribute="top" secondItem="1Gs-iL-H2b" secondAttribute="bottom" constant="84" id="NNV-58-bAG"/>
+                            <constraint firstItem="lqc-bO-17h" firstAttribute="leading" secondItem="TUn-zW-Fnh" secondAttribute="leading" constant="16" id="Su6-Oy-Ddy"/>
+                            <constraint firstItem="nUR-Ie-qDP" firstAttribute="leading" secondItem="TUn-zW-Fnh" secondAttribute="leading" constant="16" id="Ufm-IT-sBB"/>
+                            <constraint firstItem="1Gs-iL-H2b" firstAttribute="top" secondItem="DI1-KT-ucD" secondAttribute="bottom" constant="32" id="XB4-WC-TXB"/>
+                            <constraint firstItem="TUn-zW-Fnh" firstAttribute="trailing" secondItem="lqc-bO-17h" secondAttribute="trailing" constant="16" id="e2f-Cc-uba"/>
+                            <constraint firstItem="TUn-zW-Fnh" firstAttribute="trailing" secondItem="1Gs-iL-H2b" secondAttribute="trailing" constant="16" id="jRn-J3-WCv"/>
+                            <constraint firstItem="TUn-zW-Fnh" firstAttribute="trailing" secondItem="DI1-KT-ucD" secondAttribute="trailing" constant="16" id="m5E-IP-JHg"/>
+                            <constraint firstItem="TUn-zW-Fnh" firstAttribute="trailing" secondItem="nUR-Ie-qDP" secondAttribute="trailing" constant="16" id="nX0-HV-ZeP"/>
+                            <constraint firstItem="DI1-KT-ucD" firstAttribute="top" secondItem="TUn-zW-Fnh" secondAttribute="top" constant="16" id="nce-LI-9n9"/>
+                            <constraint firstItem="ivY-OW-Za2" firstAttribute="top" secondItem="nUR-Ie-qDP" secondAttribute="bottom" constant="100" id="w6O-Hh-v9N"/>
+                            <constraint firstItem="ivY-OW-Za2" firstAttribute="leading" secondItem="TUn-zW-Fnh" secondAttribute="leading" constant="32" id="zhO-qE-iGr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="amountTextField" destination="nUR-Ie-qDP" id="FcT-gZ-TzH"/>
+                        <outlet property="confirmButton" destination="ivY-OW-Za2" id="E6k-pp-WGq"/>
+                        <outlet property="usernameLabel" destination="1Gs-iL-H2b" id="Ic7-aC-hb0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXO-XR-AaI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -125,6 +229,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
