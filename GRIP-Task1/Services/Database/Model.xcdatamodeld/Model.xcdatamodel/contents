@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21D62" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Transfer" representedClassName="Transfer" syncable="YES" codeGenerationType="class"/>
-    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+    <entity name="Transfer" representedClassName=".Transfer" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="receiver" optional="YES" attributeType="Transformable"/>
+        <attribute name="sender" optional="YES" attributeType="Transformable"/>
+        <relationship name="ofUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="transfer" inverseEntity="User"/>
+    </entity>
+    <entity name="User" representedClassName=".User" syncable="YES">
         <attribute name="balance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="transfer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Transfer" inverseName="ofUser" inverseEntity="Transfer"/>
     </entity>
     <elements>
-        <element name="Transfer" positionX="-54" positionY="18" width="128" height="29"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="Transfer" positionX="-54" positionY="18" width="128" height="89"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>
