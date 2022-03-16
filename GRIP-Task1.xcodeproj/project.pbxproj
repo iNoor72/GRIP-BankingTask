@@ -11,6 +11,7 @@
 		7C26FB6227DAA01800B874DE /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26FB6127DAA01800B874DE /* UserDetailsViewController.swift */; };
 		7C26FB6627DAA08500B874DE /* TransferMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26FB6527DAA08500B874DE /* TransferMoneyViewController.swift */; };
 		7C2A134F27DAA13700255CFC /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2A134E27DAA13700255CFC /* UsersListViewController.swift */; };
+		7C2ED3FB27E22108002FA0B2 /* TransferMoneyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2ED3FA27E22108002FA0B2 /* TransferMoneyPresenter.swift */; };
 		7C3F70CA27DE4BC9009D2FD7 /* Transfer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F70C627DE4BC9009D2FD7 /* Transfer+CoreDataClass.swift */; };
 		7C3F70CB27DE4BC9009D2FD7 /* Transfer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F70C727DE4BC9009D2FD7 /* Transfer+CoreDataProperties.swift */; };
 		7C3F70CC27DE4BC9009D2FD7 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3F70C827DE4BC9009D2FD7 /* User+CoreDataClass.swift */; };
@@ -33,6 +34,7 @@
 		7C26FB6127DAA01800B874DE /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		7C26FB6527DAA08500B874DE /* TransferMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferMoneyViewController.swift; sourceTree = "<group>"; };
 		7C2A134E27DAA13700255CFC /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
+		7C2ED3FA27E22108002FA0B2 /* TransferMoneyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferMoneyPresenter.swift; sourceTree = "<group>"; };
 		7C3F70C627DE4BC9009D2FD7 /* Transfer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transfer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7C3F70C727DE4BC9009D2FD7 /* Transfer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transfer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7C3F70C827DE4BC9009D2FD7 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				7C26FB6527DAA08500B874DE /* TransferMoneyViewController.swift */,
+				7C2ED3FA27E22108002FA0B2 /* TransferMoneyPresenter.swift */,
 			);
 			path = TransferMoney;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				7CE9E07527D7F77C000A2630 /* SceneDelegate.swift in Sources */,
 				7C26FB5E27DA9F6100B874DE /* Model.xcdatamodeld in Sources */,
 				7C450ECB27DBF0CD0067AE8D /* CoreDataManager.swift in Sources */,
+				7C2ED3FB27E22108002FA0B2 /* TransferMoneyPresenter.swift in Sources */,
 				7C3F70CB27DE4BC9009D2FD7 /* Transfer+CoreDataProperties.swift in Sources */,
 				7C2A134F27DAA13700255CFC /* UsersListViewController.swift in Sources */,
 				7C450ECE27DBF1940067AE8D /* Constants.swift in Sources */,

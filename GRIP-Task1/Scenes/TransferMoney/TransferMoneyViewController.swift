@@ -7,10 +7,16 @@
 
 import UIKit
 
-class TransferMoneyViewController: UIViewController {
+protocol TransferMoneyViewProtocol: AnyObject {
+    
+}
+
+class TransferMoneyViewController: UIViewController, TransferMoneyViewProtocol {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var confirmButton: UIButton!
+    
+    var presenter: TransferMoneyPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()

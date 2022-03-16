@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 protocol UserDetailsViewProtocol: AnyObject {
     
@@ -21,7 +22,6 @@ class UserDetailsViewController: UIViewController, UserDetailsViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userDetailsPresenter = UserDetailsPresenter(view: self)
         setupUI()
     }
     
@@ -30,5 +30,8 @@ class UserDetailsViewController: UIViewController, UserDetailsViewProtocol {
     }
     
     @IBAction func transferButtonTapped(_ sender: UIButton) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllers.TransferMoneyViewController) as? TransferMoneyViewController else { return }
+        vc.presenter = TransferMoneyPresenter(view: vc, user: userDetailsPresenter?.user ?? User(context: NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)))
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

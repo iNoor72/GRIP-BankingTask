@@ -8,13 +8,15 @@
 import Foundation
 
 protocol UserDetailsPresenterProtocol {
-    
+    var user: User? { get }
 }
 
 class UserDetailsPresenter: UserDetailsPresenterProtocol {
     weak var view: UserDetailsViewProtocol?
+    var user: User?
     
-    init(view: UserDetailsViewProtocol) {
+    init(view: UserDetailsViewProtocol, user: User) {
         self.view = view
+        self.user = user
     }
 }
