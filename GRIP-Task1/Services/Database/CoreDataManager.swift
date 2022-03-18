@@ -68,6 +68,7 @@ class CoreDataManager {
             object.name = names.removeFirst()
             object.email = emails.removeFirst()
             object.balance = balances.removeFirst()
+            print(object.balance)
             objects.append(object)
             do { try managedObjectContext.save()
             } catch {

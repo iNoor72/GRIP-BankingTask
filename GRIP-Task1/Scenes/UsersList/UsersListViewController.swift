@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol UsersListViewProtocol: AnyObject {
+protocol UsersListViewProtocol: AnyObject, NavigationRoute {
     
 }
 

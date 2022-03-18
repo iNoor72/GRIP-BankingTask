@@ -11,6 +11,7 @@ class UserInfoTableViewCell: UITableViewCell {
     @IBOutlet private weak var userImage: UIImageView!
     @IBOutlet private weak var usernameLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
+    @IBOutlet private weak var balanceLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,5 +25,6 @@ class UserInfoTableViewCell: UITableViewCell {
         userImage.image = UIImage(systemName: "person")
         usernameLabel.text = user.name
         emailLabel.text = user.email
+        balanceLabel.text = "\(user.balance)"
     }
 }

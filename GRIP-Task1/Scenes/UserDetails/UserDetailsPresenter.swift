@@ -8,7 +8,7 @@
 import Foundation
 
 protocol UserDetailsPresenterProtocol {
-    var user: User? { get }
+    var user: User? { set get }
 }
 
 class UserDetailsPresenter: UserDetailsPresenterProtocol {

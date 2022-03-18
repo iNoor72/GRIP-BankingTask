@@ -3,7 +3,6 @@
     <entity name="Transfer" representedClassName=".Transfer" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="receiver" optional="YES" attributeType="Transformable"/>
-        <attribute name="sender" optional="YES" attributeType="Transformable"/>
         <relationship name="ofUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="transfer" inverseEntity="User"/>
     </entity>
     <entity name="User" representedClassName=".User" syncable="YES">
@@ -13,7 +12,7 @@
         <relationship name="transfer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Transfer" inverseName="ofUser" inverseEntity="Transfer"/>
     </entity>
     <elements>
-        <element name="Transfer" positionX="-54" positionY="18" width="128" height="89"/>
+        <element name="Transfer" positionX="-54" positionY="18" width="128" height="74"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>

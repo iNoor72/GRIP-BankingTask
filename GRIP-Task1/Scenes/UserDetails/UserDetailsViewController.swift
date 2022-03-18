@@ -27,11 +27,14 @@ class UserDetailsViewController: UIViewController, UserDetailsViewProtocol {
     
     private func setupUI() {
         transferButton.layer.cornerRadius = 10.0
+        userImage.image = UIImage(systemName: "person")
+        usernameLabel.text = userDetailsPresenter?.user?.name ?? ""
+        balanceLabel.text = "\(userDetailsPresenter?.user?.balance ?? 0)"
     }
     
     @IBAction func transferButtonTapped(_ sender: UIButton) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllers.TransferMoneyViewController) as? TransferMoneyViewController else { return }
-        vc.presenter = TransferMoneyPresenter(view: vc, user: userDetailsPresenter?.user ?? User(context: NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)))
+        vc.transferMoneyPresenter = TransferMoneyPresenter(view: vc, user: userDetailsPresenter?.user ?? User(context: NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)), databaseManager: CoreDataManager(modelName: Constants.CoreDataModelName))
         navigationController?.pushViewController(vc, animated: true)
     }
 }

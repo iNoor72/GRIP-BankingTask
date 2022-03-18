@@ -22,6 +22,10 @@
 		7C69773327DCF44600377172 /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69773227DCF44600377172 /* UsersPresenter.swift */; };
 		7C69773727DCF5F000377172 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C69773527DCF5F000377172 /* UserInfoTableViewCell.swift */; };
 		7C69773827DCF5F000377172 /* UserInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C69773627DCF5F000377172 /* UserInfoTableViewCell.xib */; };
+		7CD0864D27E50D1900A209B6 /* NavigationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD0864C27E50D1900A209B6 /* NavigationRoute.swift */; };
+		7CD0864F27E50D3700A209B6 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD0864E27E50D3700A209B6 /* Route.swift */; };
+		7CD0865127E50E0F00A209B6 /* UsersListRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD0865027E50E0F00A209B6 /* UsersListRoutes.swift */; };
+		7CD0865427E5122A00A209B6 /* UserDetailsRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD0865327E5122A00A209B6 /* UserDetailsRoutes.swift */; };
 		7CE9E07327D7F77C000A2630 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9E07227D7F77C000A2630 /* AppDelegate.swift */; };
 		7CE9E07527D7F77C000A2630 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE9E07427D7F77C000A2630 /* SceneDelegate.swift */; };
 		7CE9E07A27D7F77C000A2630 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CE9E07827D7F77C000A2630 /* Main.storyboard */; };
@@ -45,6 +49,10 @@
 		7C69773227DCF44600377172 /* UsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
 		7C69773527DCF5F000377172 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		7C69773627DCF5F000377172 /* UserInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoTableViewCell.xib; sourceTree = "<group>"; };
+		7CD0864C27E50D1900A209B6 /* NavigationRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRoute.swift; sourceTree = "<group>"; };
+		7CD0864E27E50D3700A209B6 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		7CD0865027E50E0F00A209B6 /* UsersListRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListRoutes.swift; sourceTree = "<group>"; };
+		7CD0865327E5122A00A209B6 /* UserDetailsRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsRoutes.swift; sourceTree = "<group>"; };
 		7CE9E06F27D7F77C000A2630 /* GRIP-Task1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GRIP-Task1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE9E07227D7F77C000A2630 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CE9E07427D7F77C000A2630 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,13 +109,6 @@
 			path = TransferMoney;
 			sourceTree = "<group>";
 		};
-		7C26FB6427DAA07700B874DE /* TransferHistory */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TransferHistory;
-			sourceTree = "<group>";
-		};
 		7C3F70C527DE4B84009D2FD7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +131,7 @@
 		7C450ECC27DBF18C0067AE8D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				7CD0864B27E50D1000A209B6 /* Navigation */,
 				7C450ECD27DBF1940067AE8D /* Constants.swift */,
 			);
 			path = Utilities;
@@ -142,6 +144,25 @@
 				7C69773627DCF5F000377172 /* UserInfoTableViewCell.xib */,
 			);
 			path = UserCell;
+			sourceTree = "<group>";
+		};
+		7CD0864B27E50D1000A209B6 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				7CD0865227E5121A00A209B6 /* Routes */,
+				7CD0864C27E50D1900A209B6 /* NavigationRoute.swift */,
+				7CD0864E27E50D3700A209B6 /* Route.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		7CD0865227E5121A00A209B6 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				7CD0865027E50E0F00A209B6 /* UsersListRoutes.swift */,
+				7CD0865327E5122A00A209B6 /* UserDetailsRoutes.swift */,
+			);
+			path = Routes;
 			sourceTree = "<group>";
 		};
 		7CE9E06627D7F77C000A2630 = {
@@ -180,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				7C69773427DCF5D900377172 /* UserCell */,
-				7C26FB6427DAA07700B874DE /* TransferHistory */,
 				7C26FB6327DAA05F00B874DE /* TransferMoney */,
 				7C26FB6027DAA00C00B874DE /* UserDetails */,
 				7C26FB5F27DAA00500B874DE /* UsersList */,
@@ -282,11 +302,15 @@
 				7C26FB6627DAA08500B874DE /* TransferMoneyViewController.swift in Sources */,
 				7C4C68B827DE3AD40063F442 /* UserDetailsPresenter.swift in Sources */,
 				7C3F70CA27DE4BC9009D2FD7 /* Transfer+CoreDataClass.swift in Sources */,
+				7CD0865127E50E0F00A209B6 /* UsersListRoutes.swift in Sources */,
 				7C69773327DCF44600377172 /* UsersPresenter.swift in Sources */,
+				7CD0864D27E50D1900A209B6 /* NavigationRoute.swift in Sources */,
 				7C3F70CC27DE4BC9009D2FD7 /* User+CoreDataClass.swift in Sources */,
 				7CE9E07327D7F77C000A2630 /* AppDelegate.swift in Sources */,
+				7CD0864F27E50D3700A209B6 /* Route.swift in Sources */,
 				7C3F70CD27DE4BC9009D2FD7 /* User+CoreDataProperties.swift in Sources */,
 				7CE9E07527D7F77C000A2630 /* SceneDelegate.swift in Sources */,
+				7CD0865427E5122A00A209B6 /* UserDetailsRoutes.swift in Sources */,
 				7C26FB5E27DA9F6100B874DE /* Model.xcdatamodeld in Sources */,
 				7C450ECB27DBF0CD0067AE8D /* CoreDataManager.swift in Sources */,
 				7C2ED3FB27E22108002FA0B2 /* TransferMoneyPresenter.swift in Sources */,

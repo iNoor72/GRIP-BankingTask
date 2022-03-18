@@ -23,5 +23,7 @@ class UsersPresenter: UsersPresenterProtocol {
     
     func navigateToUser(at index: Int) {
         let user = users[index]
+        let route = UsersListRoutes.UserDetails(user)
+        usersView?.navigate(to: route)
     }
 }
