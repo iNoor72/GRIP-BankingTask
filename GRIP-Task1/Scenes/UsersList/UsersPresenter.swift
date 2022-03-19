@@ -6,15 +6,17 @@
 //
 
 import Foundation
+import CoreData
 
 protocol UsersPresenterProtocol {
-    var users: [User] { get }
+    var users: [User]? { get set }
     func navigateToUser(at index: Int)
+    func fetchData()
 }
 
 class UsersPresenter: UsersPresenterProtocol {
     weak var usersView: UsersListViewProtocol?
-    var users: [User]
+    var users: [User]?
     
     init(view: UsersListViewProtocol, users: [User]) {
         self.usersView = view
@@ -22,8 +24,13 @@ class UsersPresenter: UsersPresenterProtocol {
     }
     
     func navigateToUser(at index: Int) {
-        let user = users[index]
+        guard let user = users?[index] else { return }
         let route = UsersListRoutes.UserDetails(user)
         usersView?.navigate(to: route)
+    }
+    
+    func fetchData() {
+        let users = CoreDataManager.shared.fetchUsersData()
+        self.users = users
     }
 }

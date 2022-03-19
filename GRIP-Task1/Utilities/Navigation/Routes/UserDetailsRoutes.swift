@@ -15,7 +15,7 @@ enum UserDetailsRoutes: Route {
         switch self {
         case .TransferMoney(let user):
             guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.ViewControllers.TransferMoneyViewController) as? TransferMoneyViewController else { return UIViewController() }
-            vc.transferMoneyPresenter = TransferMoneyPresenter(view: vc, user: user, databaseManager: CoreDataManager(modelName: Constants.CoreDataModelName))
+            vc.transferMoneyPresenter = TransferMoneyPresenter(view: vc, user: user, databaseManager: CoreDataManager.shared)
             return vc
         }
     }

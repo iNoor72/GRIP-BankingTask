@@ -13,15 +13,14 @@ protocol UsersListViewProtocol: AnyObject, NavigationRoute {
 
 class UsersListViewController: UIViewController, UsersListViewProtocol {
     @IBOutlet private var usersTableView: UITableView!
-    
-    let coreDataManager = CoreDataManager(modelName: Constants.CoreDataModelName)
-    var usersPresenter: UsersPresenterProtocol!
+    var usersPresenter: UsersPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Users List"
-        usersPresenter = UsersPresenter(view: self, users: coreDataManager.setDummyData())
         setupTableView()
+        usersPresenter = UsersPresenter(view: self, users: CoreDataManager.shared.fetchUsersData())
+        
     }
     
     private func setupTableView() {
@@ -37,17 +36,18 @@ class UsersListViewController: UIViewController, UsersListViewProtocol {
 //MARK:- UITableView
 extension UsersListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return usersPresenter.users.count
+        return usersPresenter?.users?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.UserInfoCell) as? UserInfoTableViewCell else { return UITableViewCell() }
-        cell.configureCell(user: usersPresenter.users[indexPath.row])
+        guard let user = usersPresenter?.users?[indexPath.row] else { return UITableViewCell() }
+        cell.configureCell(user: user)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        usersPresenter.navigateToUser(at: indexPath.row)
+        usersPresenter?.navigateToUser(at: indexPath.row)
     }
     
     
