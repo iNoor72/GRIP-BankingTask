@@ -8,7 +8,7 @@
 import UIKit
 
 protocol UsersListViewProtocol: AnyObject, NavigationRoute {
-    
+    func reloadData()
 }
 
 class UsersListViewController: UIViewController, UsersListViewProtocol {
@@ -20,13 +20,23 @@ class UsersListViewController: UIViewController, UsersListViewProtocol {
         title = "Users List"
         setupTableView()
         usersPresenter = UsersPresenter(view: self, users: CoreDataManager.shared.fetchUsersData())
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        reloadData()
     }
     
     private func setupTableView() {
         usersTableView.delegate = self
         usersTableView.dataSource = self
         usersTableView.register(UINib(nibName: Constants.NibNames.UserCellNibName, bundle: nil), forCellReuseIdentifier: Constants.Cells.UserInfoCell)
+    }
+    
+    internal func reloadData() {
+        DispatchQueue.main.async {
+            self.usersTableView.reloadData()
+        }
     }
 
 }

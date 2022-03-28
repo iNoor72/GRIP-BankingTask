@@ -12,7 +12,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if CoreDataManager.shared.managedObjectContext.registeredObjects.count == 0 {
             CoreDataManager.shared.setDummyData()
+        }
         return true
     }
     

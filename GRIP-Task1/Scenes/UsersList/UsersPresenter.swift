@@ -32,5 +32,6 @@ class UsersPresenter: UsersPresenterProtocol {
     func fetchData() {
         let users = CoreDataManager.shared.fetchUsersData()
         self.users = users
+        usersView?.reloadData()
     }
 }

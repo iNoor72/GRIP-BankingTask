@@ -54,11 +54,7 @@ class TransferMoneyViewController: UIViewController, TransferMoneyViewProtocol {
                 print("There was an error saving your data. Error is: \(error.localizedDescription)")
             }
             
-            guard let vc = storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllers.UsersListViewController) as? UsersListViewController else { return }
-            navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.popToRootViewController(animated: true)
         }
-        
-        
     }
-    
 }
